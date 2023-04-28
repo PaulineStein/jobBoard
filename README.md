@@ -1,6 +1,6 @@
 # JobBoard Read.me
 
-JobBoard is an exercice done during an exam of dev. It's an web app to consult job offers and aply for them, to post, modify and delete some job offers.
+JobBoard is an exercice done during an exam of dev. It's an web app to consult job offers and aply for them, to post, modify and delete some job offers. This project in not finish : the search bar is not functional, the modify job also is not functional.
 The backend is composed of MongoDB and Node.js.
 The frontend of composed React.js
 
@@ -25,4 +25,90 @@ The app has dependencies (you can consulte them in package.json):
 
 
 ## Backend
-The api rest has several routes : 
+The API Rest has several routes, you can see them in router.js:
+- Get all the job, function getJobs(): http://localhost:8000/api/jobs
+- Get one job by his id, function getJob(): http://localhost:8000/api/jobs/:ID
+- Put one job by his id, function updateJob(): http://localhost:8000/api/jobs/:ID
+- Post one job, function createJob(): http://localhost:8000/api/jobs
+- Delete one job by his id, function deleteJob() : http://localhost:8000/api/:jobID
+- Get some jobs by research, function searchJob() : http://localhost:8000/api/search
+
+These functions are declared in crudAPI > controllers > job.js
+
+
+
+Data are structured in json in this way :
+
+```bash
+company: {
+        type: String,
+        required: true,
+    },
+    logo: {
+        type: String,
+        required: true,
+    },
+    logoBackground: {
+        type: String,
+        required: true,
+    },
+    position: {
+        type: String,
+        required: true,
+    },
+    postedAt: {
+        type: Date,
+        default: Date.now,
+    },
+    contract: {
+        type: String,
+        required: true,
+    },
+    location: {
+        type: String,
+        required: true,
+    },
+    website: {
+        type: String,
+        required: true,
+    },
+    apply: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+    requirements: {
+        content: {
+            type: String,
+            required: true,
+        },
+        items: {
+            type: [String],
+            required: true,
+        }
+    },
+    role: {
+        content: {
+            type: String,
+            required: true,
+        },
+        items: {
+            type: [String],
+            required: true,
+        }
+    }
+```
+
+You will find the schema of the data in crudAPI > model > job.js
+
+
+
+## Frontend
+
+
+
+
+
