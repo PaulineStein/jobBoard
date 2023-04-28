@@ -107,6 +107,13 @@ You will find the schema of the data in crudAPI > model > job.js
 
 
 ## Frontend
+In this file, you will fill the different functions fetch in job-board > src > api > api.js. they are imported into the different pages. 
+There is four pages (/route) declared in job-board > src > App.js :
+ - Home: home page with all the job offer (http://localhost:3000/)
+- Single: single page where the job offer is detailed
+- AddPage: a create page with a form to submit the new job offer (http://localhost:3000/add-a-page)
+- UpdatePage: a update page with a form to submit the update job offer
+
 
 
 
